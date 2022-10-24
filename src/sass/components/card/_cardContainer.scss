@@ -1,0 +1,9 @@
+.link-tree-cardContainer {
+    width: 95%;
+    margin: auto;
+    background: $white;
+
+    .link-tree-cardContainer-content {
+        @include flex($direction: column, $gap: space(7));
+    }
+}

@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    transition: ease 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: $white;
+}
+
+a {
+    color: initial;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:visited {
+        color: initial;
+        text-decoration: none;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+#root {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    padding: space(1.5) space(3.5);
+}

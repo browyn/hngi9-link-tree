@@ -1,6 +1,6 @@
 const links = [
     {
-        linkText: 'Boss',
+        linkText: 'Browyn',
         link: 'https://boss.com'
     },
     {
@@ -8,19 +8,19 @@ const links = [
         link: 'https://boss.com'
     },
     {
-        linkText: 'Boss',
+        linkText: 'Frontend',
         link: 'https://boss.com'
     },
     {
-        linkText: 'Louis',
+        linkText: 'Backend',
         link: 'https://boss.com'
     },
     {
-        linkText: 'Boss',
+        linkText: 'PHP / Laravel',
         link: 'https://boss.com'
     },
     {
-        linkText: 'Louis',
+        linkText: 'React.js',
         link: 'https://boss.com'
     },
 ];

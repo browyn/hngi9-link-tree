@@ -1,8 +1,6 @@
 import React from 'react';
 import { Footer } from '.';
 
-import LinkItem from './LinkItem';
-
 const Layout = ({ children }) => {
     return (
         <>

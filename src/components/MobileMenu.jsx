@@ -1,9 +1,5 @@
 import React from 'react';
-
 import { RWebShare } from "react-web-share";
-
-import github from '../assets/images/github.svg';
-import slack from '../assets/images/slack.svg';
 
 const MobileMenu = ({ handleClickMenu, showMenu }) => {
     return (

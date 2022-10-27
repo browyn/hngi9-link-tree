@@ -10,9 +10,9 @@
         .link-tree-cardBody-social {
             @include flex($justify: center, $gap: space(3.5));
 
-            // @media screen and (max-width:575px) {
-            //     display: none;
-            // }
+            @media screen and (max-width:575px) {
+                display: none;
+            }
         }
     }
 }

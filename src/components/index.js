@@ -8,4 +8,5 @@ export { default as CardBody } from './Card/CardBody';
 
 export { default as Layout } from './Layout';
 export { default as LinkItem } from './LinkItem';
+export { default as MobileMenu } from './MobileMenu';
 export { default as Footer } from './Footer';

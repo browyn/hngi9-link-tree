@@ -46,4 +46,8 @@ ul {
     max-width: 1280px;
     margin: auto;
     padding: space(1.5) space(3.5);
+
+    @media screen and (max-width:575px) {
+        padding: space(1.5) space(2);
+    }
 }

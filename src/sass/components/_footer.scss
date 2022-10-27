@@ -1,6 +1,7 @@
 .link-tree-footer {
     width: 100%;
     min-height: 160px;
+    margin-top: space(3);
     @include flex($align: center);
 
     .link-tree-footer-content {

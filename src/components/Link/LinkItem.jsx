@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Tooltip, Zoom } from '@mui/material';
+import { Tooltip } from '@mui/material';
 
 const LinkItem = ({
     id,
@@ -9,17 +9,16 @@ const LinkItem = ({
     linkDetails
 }) => {
     return (
-        <>
+        <div>
             <Tooltip
                 title={linkDetails}
-                TransitionComponent={Zoom}
                 arrow
             >
-                <a href={link} id={id} className="link-tree-linkItem">
+                <a href={link} id={id} className="link-tree-linkItem" target="_black" rel="noreferrer nooppener">
                     {linkText}
                 </a>
             </Tooltip>
-        </>
+        </div>
     );
 };
 

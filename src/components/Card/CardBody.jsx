@@ -19,14 +19,20 @@ const CardBody = () => {
                                 key={`link-tree-linkItem${link.linkText}`}
                                 linkText={link.linkText}
                                 link={link.link}
+                                id={link.id}
                                 linkDetails={<LinkDetails title={link.title} subText={link.subText} />}
                             />
                         ))
                         }
                     </div>
                     <div className="link-tree-cardBody-social">
-                        <img src={slack} alt="" />
-                        <img src={github} alt="" />
+                        <a href="https://hng9.slack.com/" target="_black" rel="noreferrer nooppener">
+                            <img src={slack} alt="" />
+                        </a>
+
+                        <a href="https://github.com/browyn" target="_black" rel="noreferrer nooppener">
+                            <img src={github} alt="" />
+                        </a>
                     </div>
                 </div>
             </div>

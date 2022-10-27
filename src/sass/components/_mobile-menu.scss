@@ -22,7 +22,7 @@
 
             li.social-links {
                 width: 100%;
-                @include flex($align: center, $justify: center, $gap: space(1));
+                @include flex($align: center, $justify: center, $gap: space(2));
 
                 img {
                     width: 20px;

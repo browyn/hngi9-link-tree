@@ -10,4 +10,5 @@ export { default as Layout } from './Layout';
 export { default as LinkItem } from './Link/LinkItem';
 export { default as LinkDetails } from './Link/LinkDetails';
 export { default as MobileMenu } from './MobileMenu';
+export { default as Notification } from './Notification';
 export { default as Footer } from './Footer';

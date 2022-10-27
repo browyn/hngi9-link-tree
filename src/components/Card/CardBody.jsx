@@ -2,7 +2,8 @@ import React from 'react';
 
 import links from '../../data/links';
 
-import LinkItem from '../LinkItem';
+import LinkItem from '../Link/LinkItem';
+import LinkDetails from '../Link/LinkDetails';
 import github from '../../assets/images/github.svg';
 import slack from '../../assets/images/slack.svg';
 
@@ -18,6 +19,7 @@ const CardBody = () => {
                                 key={`link-tree-linkItem${link.linkText}`}
                                 linkText={link.linkText}
                                 link={link.link}
+                                linkDetails={<LinkDetails title={link.title} subText={link.subText} />}
                             />
                         ))
                         }

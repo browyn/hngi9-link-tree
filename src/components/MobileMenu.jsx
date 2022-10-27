@@ -26,6 +26,12 @@ const MobileMenu = ({ handleClickMenu, showMenu }) => {
                     </div>
                 </div>
             </nav>
+            {showMenu
+                &&
+                <div className="overlay" onClick={handleClickMenu}>
+
+                </div>
+            }
         </>
     );
 };

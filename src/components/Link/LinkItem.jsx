@@ -13,7 +13,6 @@ const LinkItem = ({
             <Tooltip
                 title={linkDetails}
                 TransitionComponent={Zoom}
-                disableFocusListener
                 arrow
             >
                 <a href={link} id={id} className="link-tree-linkItem">

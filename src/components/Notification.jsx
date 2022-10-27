@@ -3,11 +3,6 @@ import React from 'react';
 const Notification = ({
     text,
 }) => {
-    const handleClickNotifcation = () => {
-        return (
-            <></>
-        );
-    }
 
     return (
         <>

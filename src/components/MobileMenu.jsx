@@ -29,15 +29,6 @@ const MobileMenu = ({ handleClickMenu, showMenu }) => {
                                     </small>
                                 </RWebShare>
                             </li>
-                            <li className="social-links">
-                                <a href="https://hng9.slack.com/" target="_black" rel="noreferrer nooppener">
-                                    <img src={slack} alt="" />
-                                </a>
-
-                                <a href="https://github.com/browyn" target="_black" rel="noreferrer nooppener">
-                                    <img src={github} alt="" />
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>

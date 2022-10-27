@@ -14,9 +14,11 @@
             display: none;
 
             li {
+
                 small {
                     @include flex($align: center, $gap: space(1));
                     color: $black;
+                    cursor: pointer;
                 }
             }
 

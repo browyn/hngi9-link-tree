@@ -14,7 +14,6 @@ const LinkItem = ({
                 title={linkDetails}
                 TransitionComponent={Zoom}
                 disableFocusListener
-                disableTouchListener
                 arrow
             >
                 <a href={link} id={id} className="link-tree-linkItem">

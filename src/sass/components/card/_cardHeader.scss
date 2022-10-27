@@ -95,6 +95,19 @@
             h1 {
                 font-size: 20px;
             }
+
+            .link-tree-twitter-link-con,
+            .link-tree-slack-link-con {
+                @include flex($gap: space(1), $align: center);
+
+                span {
+                    font-size: 18px;
+                }
+            }
+
+            .link-tree-slack-link-con {
+                display: none;
+            }
         }
     }
 }

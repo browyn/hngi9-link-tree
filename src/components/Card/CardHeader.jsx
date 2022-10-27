@@ -77,6 +77,18 @@ const CardHeader = () => {
                             </div>
                         </div>
                         <h1>Browyn Louis</h1>
+                        <div className="link-tree-twitter-link-con">
+                            <span className="fa-brands fa-twitter"></span>
+                            <strong>
+                                <a href="https://twitter.com/browyn_louis" target="_black" rel="noreferrer nooppener" id="twitter">@browyn_louis</a>
+                            </strong>
+                        </div>
+                        <div className="link-tree-slack-link-con">
+                            <span className="fa-brands fa-slack"></span>
+                            <strong>
+                                <a href="https://slack.com/browynlouis" target="_black" rel="noreferrer nooppener" id="slack">@browynlouis</a>
+                            </strong>
+                        </div>
                     </div>
                 </div>
             </div>

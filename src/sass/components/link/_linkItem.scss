@@ -1,20 +1,23 @@
 .link-tree-linkItem {
-    padding: space(3) space(3.5);
+    padding: 0 space(3.5);
     background: $grey;
     color: $black;
     border-radius: space(1);
     font-size: 14px;
     font-weight: 600;
     z-index: 1;
+    height: 70px;
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-    @include flex($align: center, $justify: space-between);
+    @include flex($align: center, $justify: center);
 
     &:hover .share-icon {
         opacity: 1;
+        display: block;
     }
 
     &:hover {
         background: #D0D5DD;
+        justify-content: space-between;
     }
 
     &:focus {
@@ -23,10 +26,11 @@
 
     .share-icon {
         z-index: 1000;
-        padding: space(0.5);
+        padding: space(0.75);
         border-radius: 50%;
         border: 1px solid #98A2B3;
         opacity: 0;
+        display: none;
 
         &:hover,
         &:visited,
@@ -34,10 +38,18 @@
             background: #D0D5DD;
         }
 
-        &:focus {
-            border: 1px solid #98A2B3;
-        }
+    }
 
+    span:nth-of-type(1) {
+        z-index: 1000;
+        padding: 0 space(0.75);
+        border-radius: 50%;
+        opacity: 0;
+        // margin-right: auto;
+    }
+
+    span:nth-of-type(2) {
+        // margin-left: auto;
     }
 
 }

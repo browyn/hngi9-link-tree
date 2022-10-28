@@ -1,25 +1,25 @@
 const links = [
     {
-        linkText: 'Browyn',
+        linkText: 'Browyn Louis',
         link: 'https://browyn.netlify.app',
         title: 'My Porfolio',
         subText: 'This is a link taking you to the latest version of my portfolio'
     },
     {
-        linkText: 'Zuri Family',
+        linkText: 'Meet Zuri Family',
         link: 'https://training.zuri.team/',
         // title,
         subText: 'Meet the Zuri Family',
         id: 'btn__zuri'
     }, {
-        linkText: 'Zuri Library',
+        linkText: 'Browse Zuri\'s Library',
         link: 'https://books.zuri.team/',
         title: 'Zuri\'s Library of books',
         subText: 'You can find all kinds of tech related books right here on the Zuri librabry, you get access to free and premium books to help you with your tech journey.',
         id: 'books'
     },
     {
-        linkText: 'Python Book',
+        linkText: 'Python Book For Noobs',
         link: 'https://books.zuri.team/python-for-beginners?ref_id=browynlouis',
         title: 'Grab a copy of the python for beginners book',
         subText: 'Are you new to python? Grab a copy of my beginner\'s friendly book on python.',
@@ -29,7 +29,7 @@ const links = [
         linkText: 'Tech-Talent Hunt',
         link: 'https://background.zuri.team/',
         // title:,
-        subText: 'Tech talent hunt is a program where you get to test your tech skills and other watch others do amazing works with their skills.',
+        subText: 'Tech talent hunt is a program where you get to test your tech skills and watch others do amazing works with their skills.',
         id: 'pitch'
     },
     {

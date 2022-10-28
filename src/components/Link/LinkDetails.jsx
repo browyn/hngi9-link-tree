@@ -9,12 +9,17 @@ const LinkDetails = ({
         <>
             <div className="link-tree-linkDetails">
                 <div className="link-tree-linkDetails-container">
-                    <p>
-                        <strong>{title}</strong>
-                    </p>
-                    <span>
-                        {subText}
-                    </span>
+                    {title
+                        &&
+                        <p>
+                            <strong>{title}</strong>
+                        </p>
+                    }
+                    {subText
+                        && <span>
+                            {subText}
+                        </span>
+                    }
                 </div>
             </div>
         </>

@@ -20,6 +20,8 @@ const CardBody = () => {
                                 linkText={link.linkText}
                                 link={link.link}
                                 id={link.id}
+                                linkTitle={link.title}
+                                linkSubText={link.subText}
                                 linkDetails={<LinkDetails title={link.title} subText={link.subText} />}
                             />
                         ))

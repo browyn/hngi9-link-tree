@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# HNGi9 STAGE ONE TASK - BUILD A WEBSITE LIKE LINK-TREE's
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is was built as a solution to a task given to interns at the HNG internship program 9.
+- Here is the a link to my solution- []()
 
-## Available Scripts
+## Project's / Task Requirements
 
-In the project directory, you can run:
+While asked to build a website with features as that of link-tree, we were also given a design as figma file to use as the UI for the task.
 
-### `npm start`
+- Here is the a link to the figma file - []()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project was divided into two parts (profile and links section) and we were also asked to follow a set of rules follow as a requirement to move unto the next stage, the rules are listed out below;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Required Librabry
 
-### `npm test`
+- React.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### The Profile section
 
-### `npm run build`
+- A profile image with an id of "profile__img"
+- Twitter username with an id of "twitter"
+- Slack display name with an id of "slack" (This is meant to be hidden in the UI but available on code)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### The Links Section
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Special resources used
 
-### `npm run eject`
+- React.js
+- SCSS 
+- JavaScript
+- react-web-share
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Extra Features added
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Ability to share link-tree profile
+- Ability to share individual link
+- Ability to add / see extra information about individual link
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Some notable experience
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To access the above features, you must hover or touch on a single link, however, on mobile that may be tricky, because some users may have no reason to touch slightly and will likely end up clicking the link which will not activate the above features but link to the intended route.
 
-## Learn More
+On the official link-tree, a user on mobile would have to swipe a link to see a button to activate the share feature. Still how may users would want to swipe left or right without an indicator to do so.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To solve this, I thought of a longer but better (in my opinion) approach. The solution will be to;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Display three icons on click of a link, which are the visit link icon, info icon and share icon, with the user being able to choose whichever one that fits the intention.
 
-### Code Splitting
+Although this is a longer approach, the user has full access to the features on a single link on mobile devices, while maintaining the default hover effects to display all features attached to a link on desktop.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I didn't implement this because, I was sticking to the rules on the task.

@@ -1,13 +1,13 @@
 # HNGi9 STAGE ONE TASK - BUILD A WEBSITE LIKE LINK-TREE's
 
 This project is was built as a solution to a task given to interns at the HNG internship program 9.
-- Here is the a link to my solution- []()
+- Here is the a link to my solution- [https://browyn-link-tree.netlify.app/](https://browyn-link-tree.netlify.app/)
 
 ## Project's / Task Requirements
 
 While asked to build a website with features as that of link-tree, we were also given a design as figma file to use as the UI for the task.
 
-- Here is the a link to the figma file - []()
+- Here is the a link to the figma file - [https://www.figma.com/file/m2C1MHd8vASrLqfxSUdgxD/Designs-for-frontend?node-id=4623%3A431129](https://www.figma.com/file/m2C1MHd8vASrLqfxSUdgxD/Designs-for-frontend?node-id=4623%3A431129)
 
 The project was divided into two parts (profile and links section) and we were also asked to follow a set of rules follow as a requirement to move unto the next stage, the rules are listed out below;
 

@@ -23,7 +23,7 @@ The project was divided into two parts (profile and links section) and we were a
 
 ### The Links Section
 
-- 
+- Click [https://hng9.notion.site/Front-End-Stage-1-Task-cdaf503a796b4a5a85c5883a0a6163db](here) to view
 
 ## Special resources used
 

@@ -1,11 +1,11 @@
 import React from "react";
 
-import links from "../../data/links";
+import links from "../../../data/links";
 
 import LinkItem from "../Link/LinkItem";
 import LinkDetails from "../Link/LinkDetails";
-import github from "../../assets/images/github.svg";
-import slack from "../../assets/images/slack.svg";
+import github from "../../../assets/images/github.svg";
+import slack from "../../../assets/images/slack.svg";
 
 const CardBody = () => {
   return (
@@ -30,7 +30,7 @@ const CardBody = () => {
           <div className="link-tree-cardBody-social">
             <a
               href="https://hng9.slack.com/"
-              target="_black"
+              target="_blank"
               rel="noreferrer nooppener"
             >
               <img src={slack} alt="" />
@@ -38,7 +38,7 @@ const CardBody = () => {
 
             <a
               href="https://github.com/browyn"
-              target="_black"
+              target="_blank"
               rel="noreferrer nooppener"
             >
               <img src={github} alt="" />

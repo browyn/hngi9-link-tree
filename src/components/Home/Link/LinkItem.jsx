@@ -13,7 +13,7 @@ const LinkItem = ({
 }) => {
   return (
     <div>
-      <Tooltip title={linkDetails} arrow>
+      <Tooltip title={linkDetails} placement="top-end" arrow>
         <a
           href={link}
           id={id}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import i4gLogo from "../assets/images/I4G.svg";
+import i4gLogo from "../../assets/images/I4G.svg";
 
 const Footer = () => {
   return (

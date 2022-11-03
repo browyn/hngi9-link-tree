@@ -1,0 +1,13 @@
+.link-tree-cardBody {
+  .link-tree-cardBody-content {
+    @include flex($direction: column, $gap: space(7));
+
+    .link-tree-cardBody-linkItems {
+      @include flex($direction: column, $gap: space(4));
+    }
+
+    .link-tree-cardBody-social {
+      @include flex($justify: center, $gap: space(3.5));
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { RWebShare } from "react-web-share";
 import { Tooltip } from "@mui/material";
 
-import camera from "../../assets/images/camera.svg";
+import camera from "../../../assets/images/camera.svg";
 
 import MobileMenu from "../MobileMenu";
 

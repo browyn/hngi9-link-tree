@@ -1,27 +1,30 @@
 // Abstracts
 
-@import './abstracts/variables';
-@import './abstracts/functions';
-@import './abstracts/mixins';
-@import './abstracts/extends';
+@import "./abstracts/variables";
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/extends";
 
 // Base
 
-@import './base/reset';
-@import './base/typography';
+@import "./base/reset";
+@import "./base/typography";
 
-// Components
+// ===============
+// COMPONENTS
+// ===============
 
-@import './components/layout';
-@import './components/card/cardContainer';
-@import './components/card/cardHeader';
-@import './components/card/cardBody';
+// Layouts
 
-@import './components/link/linkItem';
-@import './components/link/link-details';
-@import './components/mobile-menu';
-@import './components/notification';
-@import './components/footer';
+@import "./components/Layout/layout";
+@import "./components/Layout/footer";
 
+// Home
 
-// Pages
+@import "./components/Home/card/cardContainer";
+@import "./components/Home/card/cardHeader";
+@import "./components/Home/card/cardBody";
+@import "./components/Home/card/mobile-menu";
+
+@import "./components/Home/link/linkItem";
+@import "./components/Home/link/link-details";

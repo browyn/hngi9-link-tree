@@ -1,113 +1,116 @@
 .link-tree-cardHeader {
-    .link-tree-cardHeader-content {
-        @include flex($align: center, $justify: center);
+  .link-tree-cardHeader-content {
+    @include flex($align: center, $justify: center);
 
-        .link-tree-cardHeader-profileInfo {
-            width: 100%;
-            @include flex($direction: column, $gap: space(2), $align: center);
+    .link-tree-cardHeader-profileInfo {
+      width: 100%;
+      @include flex($direction: column, $gap: space(2), $align: center);
 
-            .link-tree-cardHeader-options {
-                width: 100%;
-                @include flex($justify: flex-end, $align: flex-end);
+      .link-tree-cardHeader-options {
+        width: 100%;
+        @include flex($justify: flex-end, $align: flex-end);
 
-                .share-icon {
-                    width: 40px;
-                    height: 40px;
-                    border: 2px dashed $grey;
-                    border-radius: 50%;
-                    position: absolute;
-                    right: 200px;
-                    top: 10px;
-                    cursor: pointer;
-                    @include flex($justify: center, $align: center);
+        .share-icon {
+          width: 40px;
+          height: 40px;
+          border: 2px dashed $grey;
+          border-radius: 50%;
+          position: absolute;
+          right: 200px;
+          top: 10px;
+          cursor: pointer;
+          transition: ease 500ms;
+          @include flex($justify: center, $align: center);
 
-                    @media screen and (max-width:1024px) {
-                        right: 100px;
-                    }
+          @media screen and (max-width: 1024px) {
+            right: 100px;
+          }
 
-                    @media screen and (max-width:575px) {
-                        display: none;
-                    }
-                }
-
-
-                .menu-icon {
-                    width: 40px;
-                    height: 40px;
-                    border: 2px dashed $grey;
-                    border-radius: 50%;
-                    position: absolute;
-                    top: 10px;
-                    @include flex($justify: center, $align: center);
-                    cursor: pointer;
-                    display: none;
-
-                    @media screen and (max-width:575px) {
-                        display: flex;
-                    }
-
-                }
-            }
-
-            .link-tree-cardHeader-profileImage {
-                img:nth-of-type(1) {
-                    width: 88px;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    box-sizing: content-box;
-                    border: 5.5px solid $white;
-
-                    &:focus {
-                        border: 5.5px solid #EBE9FE;
-                    }
-                }
-
-                .profileImageOverlay {
-                    width: 88px;
-                    height: 88px;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    background: linear-gradient(0deg, rgba(52, 64, 84, 0.75), rgba(52, 64, 84, 0.75));
-                    @include flex($direction: column, $align: center, $justify: flex-end);
-                    position: absolute;
-                    bottom: 4%;
-                    box-sizing: content-box;
-                    border: 5.5px solid $white;
-                    display: none;
-
-                    img {
-                        width: initial;
-                        border: none;
-                        border-radius: initial;
-                        margin-bottom: space(2);
-
-                        &:focus {
-                            border: none;
-                        }
-                    }
-                }
-
-                .profileImageOverlay.show {
-                    display: flex;
-                }
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            .link-tree-twitter-link-con,
-            .link-tree-slack-link-con {
-                @include flex($gap: space(1), $align: center);
-
-                span {
-                    font-size: 18px;
-                }
-            }
-
-            .link-tree-slack-link-con {
-                display: none;
-            }
+          @media screen and (max-width: 575px) {
+            display: none;
+          }
         }
+
+        .menu-icon {
+          width: 40px;
+          height: 40px;
+          border: 2px dashed $grey;
+          border-radius: 50%;
+          position: absolute;
+          top: 10px;
+          cursor: pointer;
+          transition: ease 500ms;
+          display: none;
+
+          @media screen and (max-width: 575px) {
+            @include flex($justify: center, $align: center);
+          }
+        }
+      }
+
+      .link-tree-cardHeader-profileImage {
+        img:nth-of-type(1) {
+          width: 88px;
+          border-radius: 50%;
+          cursor: pointer;
+          box-sizing: content-box;
+          border: 5.5px solid $white;
+
+          &:focus {
+            border: 5.5px solid #ebe9fe;
+          }
+        }
+
+        .profileImageOverlay {
+          width: 88px;
+          height: 88px;
+          border-radius: 50%;
+          cursor: pointer;
+          background: linear-gradient(
+            0deg,
+            rgba(52, 64, 84, 0.75),
+            rgba(52, 64, 84, 0.75)
+          );
+          @include flex($direction: column, $align: center, $justify: flex-end);
+          position: absolute;
+          bottom: 4%;
+          box-sizing: content-box;
+          border: 5.5px solid $white;
+          display: none;
+
+          img {
+            width: initial;
+            border: none;
+            border-radius: initial;
+            margin-bottom: space(2);
+
+            &:focus {
+              border: none;
+            }
+          }
+        }
+
+        .profileImageOverlay.show {
+          display: flex;
+        }
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .link-tree-twitter-link-con,
+      .link-tree-slack-link-con {
+        @include flex($gap: space(1), $align: center);
+
+        span {
+          font-size: 18px;
+        }
+      }
+
+      .link-tree-slack-link-con {
+        display: none;
+      }
     }
+  }
 }

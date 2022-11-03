@@ -18,12 +18,12 @@ const LinkItem = ({
           href={link}
           id={id}
           className="link-tree-linkItem"
-          target="_black"
+          target="_blank"
           rel="noreferrer nooppener"
           onClick={(e) => {
             e.preventDefault();
             if (e.target === e.currentTarget) {
-              window.location.href = link;
+              window.open(link, "_blank");
             }
           }}
         >

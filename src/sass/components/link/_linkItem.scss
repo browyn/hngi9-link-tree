@@ -1,50 +1,49 @@
 .link-tree-linkItem {
-    padding: 0 space(3.5);
-    background: $grey;
-    color: $black;
-    border-radius: space(1);
-    font-size: 14px;
-    font-weight: 600;
-    z-index: 1;
-    height: 70px;
-    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-    @include flex($align: center, $justify: center);
+  padding: 0 space(3.5);
+  background: $grey;
+  color: $black;
+  border-radius: space(1);
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1;
+  height: 70px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  transition: ease 500ms;
+  @include flex($align: center, $justify: center);
 
-    &:hover .share-icon {
-        opacity: 1;
-        display: block;
-    }
+  &:hover .share-icon {
+    opacity: 1;
+    display: block;
+  }
 
-    &:hover {
-        background: #D0D5DD;
-        justify-content: space-between;
-    }
+  &:hover {
+    background: #d0d5dd;
+    justify-content: space-between;
+  }
 
+  &:focus {
+    border: 1px solid #98a2b3;
+  }
+
+  .share-icon {
+    z-index: 1000;
+    padding: space(0.75);
+    border-radius: 50%;
+    border: 1px solid #98a2b3;
+    opacity: 0;
+    display: none;
+
+    &:hover,
+    &:visited,
     &:focus {
-        border: 1px solid #98A2B3;
+      background: #d0d5dd;
     }
+  }
 
-    .share-icon {
-        z-index: 1000;
-        padding: space(0.75);
-        border-radius: 50%;
-        border: 1px solid #98A2B3;
-        opacity: 0;
-        display: none;
-
-        &:hover,
-        &:visited,
-        &:focus {
-            background: #D0D5DD;
-        }
-
-    }
-
-    span:nth-of-type(1) {
-        z-index: 1000;
-        padding: 0 space(0.75);
-        border-radius: 50%;
-        opacity: 0;
-    }
-
+  span:nth-of-type(1) {
+    z-index: 1000;
+    padding: 0 space(0.75);
+    border-radius: 50%;
+    opacity: 0;
+  }
 }

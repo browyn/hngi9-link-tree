@@ -1,53 +1,57 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    position: relative;
-    transition: ease 500ms;
-    font-family: 'Inter', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  font-family: "Inter", sans-serif;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    width: 100%;
-    min-height: 100vh;
-    background: $white;
+  width: 100%;
+  min-height: 100vh;
+  background: $white;
 }
 
 a {
+  color: initial;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:visited {
     color: initial;
     text-decoration: none;
-
-    &:hover,
-    &:active,
-    &:visited {
-        color: initial;
-        text-decoration: none;
-    }
+  }
 }
 
 span {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 small {
-    font-size: 10px
+  font-size: 10px;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 #root {
-    width: 100%;
-    max-width: 1280px;
-    margin: auto;
-    padding: space(1.5) space(3.5);
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: space(1.5) space(4);
 
-    @media screen and (max-width:575px) {
-        padding: space(1.5) space(2);
-    }
+  @media screen and (max-width: 575px) {
+    padding: space(1.5) space(2);
+  }
+}
+
+.tooltip {
+  padding: space(0.5);
+  font-size: 16px;
 }

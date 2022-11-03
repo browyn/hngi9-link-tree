@@ -25,15 +25,20 @@ const CardHeader = () => {
           <div className="link-tree-cardHeader-profileInfo">
             <div className="link-tree-cardHeader-options">
               {/* Share Icon */}
-              <Tooltip title="Share" placement="left" arrow>
-                <RWebShare
-                  data={{
-                    text: "Browyn Louis",
-                    url: window.location.href,
-                    title:
-                      "Link Tree Application By Browyn Louis - HNGi9 Frontend Task",
-                  }}
-                  onClick={() => console.log("shared successfully!")}
+
+              <RWebShare
+                data={{
+                  text: "Browyn Louis",
+                  url: window.location.href,
+                  title:
+                    "Link Tree Application By Browyn Louis - HNGi9 Frontend Task",
+                }}
+                onClick={() => console.log("shared successfully!")}
+              >
+                <Tooltip
+                  title={<span className="tooltip">Share</span>}
+                  placement="left"
+                  arrow
                 >
                   <div className="share-icon">
                     <svg
@@ -52,8 +57,9 @@ const CardHeader = () => {
                       />
                     </svg>
                   </div>
-                </RWebShare>
-              </Tooltip>
+                </Tooltip>
+              </RWebShare>
+
               {/* Ellipsis Icon */}
               <div className="menu-icon" onClick={handleClickMenu}>
                 <svg

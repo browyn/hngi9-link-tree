@@ -51,8 +51,10 @@ const ContactForm = () => {
                   id="checkbox"
                   className="link-tree-inputCheckbox"
                 />
-                You agree to providing your data to Browyn Louis who may contact
-                you.
+                <span>
+                  You agree to providing your data to Browyn Louis who may
+                  contact you.
+                </span>
               </label>
             </div>
 

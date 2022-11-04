@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ id, type, label, placeholder, helperText }) => {
+const InputField = ({ id, type, label, placeholder, helperText }) => {
   return (
     <>
       <div className="link-tree-inputContainer">
@@ -19,4 +19,4 @@ const Input = ({ id, type, label, placeholder, helperText }) => {
   );
 };
 
-export default Input;
+export default InputField;

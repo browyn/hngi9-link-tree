@@ -22,4 +22,15 @@
       border: 1px solid #84caff;
     }
   }
+  .link-tree-input.error {
+    border: 1px solid $error;
+
+    &:focus {
+      border: 1px solid $error;
+    }
+  }
+
+  .link-tree-input-helperText {
+    color: $error;
+  }
 }

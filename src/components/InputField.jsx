@@ -1,6 +1,16 @@
 import React from "react";
 
-const InputField = ({ id, type, label, placeholder, helperText }) => {
+const InputField = ({
+  id,
+  type,
+  label,
+  placeholder,
+  helperText,
+  value,
+  handleChange,
+  handleBlur,
+  className,
+}) => {
   return (
     <>
       <div className="link-tree-inputContainer">
@@ -9,7 +19,11 @@ const InputField = ({ id, type, label, placeholder, helperText }) => {
           type={type}
           id={id}
           placeholder={placeholder}
-          className={`link-tree-input`}
+          value={value}
+          className={`link-tree-input ${className}`}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          autocomplete="off"
         />
         {helperText ? (
           <span className="link-tree-input-helperText">{helperText}</span>

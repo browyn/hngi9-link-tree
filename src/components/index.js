@@ -6,7 +6,6 @@ export { default as Layout } from './Layout/Layout';
 
 export { default as CardContainer } from './Home/Card/CardContainer';
 
-
 // Contact Page exports
 
 export { default as ContactContainer } from './Contact/ContactContainer';

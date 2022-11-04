@@ -51,7 +51,7 @@ const ContactForm = () => {
     e.preventDefault();
     setSubmit(true);
     validation(values);
-    if (!errors) {
+    if (JSON.stringify(errors) === "{}") {
       setModal(true);
     }
   };
@@ -183,7 +183,14 @@ const ContactForm = () => {
           </form>
         </div>
       </div>
-      {modal && <Modal title="Form Submitted" />}
+      {modal && (
+        <Modal
+          title="Form Submitted"
+          desc="Your message was submitted successfully, a response will be sent to your email within 24 hours"
+          modal={modal}
+          setModal={setModal}
+        />
+      )}
     </>
   );
 };

@@ -13,8 +13,19 @@
   .link-tree-modal {
     width: 90%;
     max-width: 600px;
-    padding: space(2);
+    padding: space(3) space(2);
     background: $white;
-    color: $grey;
+    color: black;
+    border-radius: space(1);
+    @include flex($direction: column, $gap: space(2));
+
+    span {
+      align-self: flex-end;
+      cursor: pointer;
+    }
+
+    h2 {
+      font-weight: 600;
+    }
   }
 }

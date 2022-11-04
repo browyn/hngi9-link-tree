@@ -28,14 +28,6 @@ a {
   }
 }
 
-span {
-  font-size: 13px;
-}
-
-small {
-  font-size: 10px;
-}
-
 ul {
   list-style: none;
 }
@@ -44,7 +36,7 @@ ul {
   width: 100%;
   max-width: 1280px;
   margin: auto;
-  padding: space(1.5) space(4);
+  padding: 0 space(4);
 
   @media screen and (max-width: 575px) {
     padding: space(1.5) space(2);

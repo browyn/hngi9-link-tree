@@ -1,0 +1,9 @@
+.link-tree-contactHeader-container {
+  .link-tree-contactHeader-content {
+    @include flex($direction: column, $gap: space(3));
+
+    h1 {
+      font-weight: 600;
+    }
+  }
+}

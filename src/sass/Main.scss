@@ -14,6 +14,11 @@
 // COMPONENTS
 // ===============
 
+// General
+
+@import "./components/input-field";
+@import "./components/button";
+
 // Layouts
 
 @import "./components/Layout/layout";
@@ -28,3 +33,9 @@
 
 @import "./components/Home/link/linkItem";
 @import "./components/Home/link/link-details";
+
+// Contact
+
+@import "./components/Contact/contactContainer";
+@import "./components/Contact/contactHeader";
+@import "./components/Contact/contactForm";

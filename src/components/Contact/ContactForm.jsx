@@ -11,12 +11,27 @@ const ContactForm = () => {
           <form action="" className="link-tree-contactForm">
             {/* Names */}
             <div className="link-tree-inputGroup">
-              <InputField id="first_name" label="First name" />
-              <InputField id="last_name" label="Last name" />
+              <InputField
+                id="first_name"
+                label="First name"
+                type="text"
+                placeholder="Enter your first name"
+              />
+              <InputField
+                id="last_name"
+                label="Last name"
+                type="text"
+                placeholder="Enter your last name"
+              />
             </div>
 
             {/* Email */}
-            <InputField id="email" label="Email" />
+            <InputField
+              id="email"
+              label="Email"
+              type="email"
+              placeholder="yourname@gmail.com"
+            />
 
             {/* Textarea */}
             <div className="link-tree-inputGroup textarea">
@@ -24,6 +39,7 @@ const ContactForm = () => {
               <textarea
                 id="message"
                 className="link-tree-inputTextarea"
+                placeholder="Send me a message and I'll reply you as soon as possible..."
               ></textarea>
             </div>
 
@@ -40,7 +56,7 @@ const ContactForm = () => {
               </label>
             </div>
 
-            <Button type="submit" text="Submit" id="btn__submit" />
+            <Button type="submit" text="Send message" id="btn__submit" />
           </form>
         </div>
       </div>

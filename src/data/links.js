@@ -8,7 +8,7 @@ const links = [
     {
         linkText: 'Meet Zuri Family',
         link: 'https://training.zuri.team/',
-        // title,
+        title: null,
         subText: 'Meet the Zuri Family',
         id: 'btn__zuri'
     }, {
@@ -28,16 +28,23 @@ const links = [
     {
         linkText: 'Tech-Talent Hunt',
         link: 'https://background.zuri.team/',
-        // title:,
+        title: null,
         subText: 'Tech talent hunt is a program where you get to test your tech skills and watch others do amazing works with their skills.',
         id: 'pitch'
     },
     {
         linkText: 'UI/UX Design Book',
         link: 'https://books.zuri.team/design-rules',
-        // title,
+        title: null,
         subText: 'Get the best book money can get you on UI/UX.',
         id: 'book__design'
+    },
+    {
+        linkText: "Contact Me",
+        link: "/contact",
+        title: null,
+        subText: "Send me a message",
+        id: "contact",
     },
 ];
 

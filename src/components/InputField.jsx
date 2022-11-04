@@ -23,7 +23,7 @@ const InputField = ({
           className={`link-tree-input ${className}`}
           onChange={handleChange}
           onBlur={handleBlur}
-          autocomplete="off"
+          autoComplete="off"
         />
         {helperText ? (
           <span className="link-tree-input-helperText">{helperText}</span>

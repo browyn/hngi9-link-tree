@@ -2,43 +2,60 @@ import React, { useEffect, useState } from "react";
 
 import InputField from "../InputField";
 import Button from "../Button";
+import Modal from "../Modal";
 
 const ContactForm = () => {
+  const [submit, setSubmit] = useState();
+  const [modal, setModal] = useState();
   const [errors, setErrors] = useState([]);
-  const [formData, setFormData] = useState({});
-
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    message: "",
+    email: "",
+  });
   const [touched, setTouched] = useState({});
 
+  const validation = (values) => {
+    const errors = {};
+
+    if (!values.first_name) {
+      errors.first_name = "Please the first name field is Required";
+    }
+
+    if (!values.last_name) {
+      errors.last_name = "Please the last name field is required";
+    }
+
+    if (!values.email) {
+      errors.email = "Your email is required";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
+      errors.email = "Please enter a valid email address";
+    }
+
+    if (!values.message) {
+      errors.message = "Please enter a message";
+    } else if (values.message.length < 30) {
+      errors.message = "Please enter at least 30 characters";
+    }
+    setErrors(errors);
+  };
+
   useEffect(() => {
-    const validation = (values) => {
-      const errors = {};
-
-      if (!values.first_name) {
-        errors.first_name = "Please the first name field is Required";
-      }
-
-      if (!values.last_name) {
-        errors.last_name = "Please the last name field is required";
-      }
-
-      if (!values.email) {
-        errors.email = "Your email is required";
-      } else if (
-        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-      ) {
-        errors.email = "Please enter a valid email address";
-      }
-
-      if (!values.message) {
-        errors.message = "Please enter a message";
-      }
-      setErrors(errors);
-    };
-
     validation(formData);
   }, [formData, touched]);
 
-  const { first_name, last_name, email } = formData;
+  const handleSubmit = (e, values) => {
+    e.preventDefault();
+    setSubmit(true);
+    validation(values);
+
+    if (!errors) {
+      setModal(true);
+    }
+  };
 
   const handleChange = (e) => {
     setFormData((prevState) => ({
@@ -53,12 +70,15 @@ const ContactForm = () => {
       [e.target.id]: true,
     }));
   };
+
+  const { first_name, last_name, email } = formData;
+
   return (
     <>
       <div className="link-tree-contactForm-container">
         <div className="link-tree-contactForm-content">
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => handleSubmit(e, formData)}
             className="link-tree-contactForm"
           >
             {/* Names */}
@@ -70,9 +90,15 @@ const ContactForm = () => {
                 placeholder="Enter your first name"
                 handleChange={handleChange}
                 handleBlur={handleBlur}
-                className={errors.first_name && touched.first_name && "error"}
+                className={
+                  (errors.first_name && touched.first_name && "error") ||
+                  (submit && errors.first_name && "error")
+                }
                 helperText={
-                  errors.first_name && touched.first_name && errors.first_name
+                  (errors.first_name &&
+                    touched.first_name &&
+                    errors.first_name) ||
+                  (submit && errors.first_name)
                 }
                 value={first_name}
               />
@@ -83,9 +109,13 @@ const ContactForm = () => {
                 placeholder="Enter your last name"
                 handleChange={handleChange}
                 handleBlur={handleBlur}
-                className={errors.last_name && touched.last_name && "error"}
+                className={
+                  (errors.last_name && touched.last_name && "error") ||
+                  (submit && errors.last_name && "error")
+                }
                 helperText={
-                  errors.last_name && touched.last_name && errors.last_name
+                  (errors.last_name && touched.last_name && errors.last_name) ||
+                  (submit && errors.last_name)
                 }
                 value={last_name}
               />
@@ -99,8 +129,14 @@ const ContactForm = () => {
               placeholder="yourname@gmail.com"
               handleChange={handleChange}
               handleBlur={handleBlur}
-              className={errors.email && touched.email && "error"}
-              helperText={errors.email && touched.email && errors.email}
+              className={
+                (errors.email && touched.email && "error") ||
+                (submit && errors.email && "error")
+              }
+              helperText={
+                (errors.email && touched.email && errors.email) ||
+                (submit && errors.email)
+              }
               value={email}
             />
 
@@ -112,13 +148,21 @@ const ContactForm = () => {
                 placeholder="Send me a message and I'll reply you as soon as possible..."
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={errors.message && touched.message && "error"}
+                className={
+                  (errors.message && touched.message && "error") ||
+                  (submit && errors.message && "error")
+                }
               ></textarea>
-              {errors.message && touched.message && (
+              {(errors.message && touched.message && (
                 <span className="link-tree-input-helperText">
                   {errors.message}
                 </span>
-              )}
+              )) ||
+                (submit && errors.message && (
+                  <span className="link-tree-input-helperText">
+                    {errors.message}
+                  </span>
+                ))}
             </div>
 
             {/* Checkbox */}
@@ -140,6 +184,7 @@ const ContactForm = () => {
           </form>
         </div>
       </div>
+      {modal && <Modal title="Form Submitted" />}
     </>
   );
 };

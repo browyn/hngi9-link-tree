@@ -51,7 +51,6 @@ const ContactForm = () => {
     e.preventDefault();
     setSubmit(true);
     validation(values);
-
     if (!errors) {
       setModal(true);
     }

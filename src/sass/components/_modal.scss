@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   height: 100vh;
+  z-index: 1;
   width: 100%;
   background: rgba(0, 0, 0, 0.3);
   @include flex($align: center, $justify: center);

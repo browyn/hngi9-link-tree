@@ -52,12 +52,12 @@ const ContactForm = () => {
   const handleBlur = (e) => {
     let key = e.target.id;
     let value = e.target.value;
+
     handleValidation(formData, key, value);
   };
 
   const handleSubmit = (e, formData) => {
     e.preventDefault();
-    // Displays errors if input field is empty
 
     if (Object.values(formData).some((value) => value === "")) {
       const submitErrors = Object.fromEntries(
@@ -162,6 +162,11 @@ const ContactForm = () => {
                   contact you.
                 </span>
               </label>
+              {errors.checkbox && (
+                <span className="link-tree-input-helperText">
+                  {errors.checkbox}
+                </span>
+              )}
             </div>
 
             <Button type="submit" text="Send message" id="btn__submit" />
@@ -169,7 +174,7 @@ const ContactForm = () => {
         </div>
       </div>
       {modal && (
-        <Modal desc="Thank you for reahing out, your message has been sent successfully, I will get back to you via the email provided within the next 24 hours." />
+        <Modal desc="Thank you for reaching out, your message has been sent successfully, I will get back to you via the email provided within the next 24 hours." />
       )}
     </>
   );

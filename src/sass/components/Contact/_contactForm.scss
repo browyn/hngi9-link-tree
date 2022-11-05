@@ -20,6 +20,10 @@
           content: " ";
         }
 
+        input[type="checkbox"]:checked + label::before {
+          border: 1px solid $buttonBlueDefault;
+        }
+
         input[type="checkbox"]:focus + label::before,
         input[type="checkbox"]:hover + label::before {
           box-shadow: $butonShadow;
@@ -34,11 +38,11 @@
 
           &::before {
             background: rgb(249, 250, 251);
-            border: 1px solid $buttonBlueDefault;
+            border: 1px solid $inputGreyBorder;
             content: "";
             display: inline-block;
-            height: 16px;
-            width: 16px;
+            height: 14px;
+            width: 14px;
             border-radius: space(0.6);
             cursor: pointer;
           }
@@ -46,8 +50,8 @@
           &::after {
             content: none;
             display: inline-block;
-            height: 4px;
-            width: 7px;
+            height: 3px;
+            width: 6px;
             border-left: 2px solid rgb(21, 112, 239);
             border-bottom: 2px solid rgb(21, 112, 239);
             top: space(0.5);

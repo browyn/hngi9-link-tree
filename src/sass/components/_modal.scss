@@ -12,20 +12,31 @@
 
   .link-tree-modal {
     width: 90%;
-    max-width: 600px;
-    padding: space(3) space(2);
+    max-width: 400px;
+    padding: space(6) space(3);
     background: $white;
     color: black;
     border-radius: space(1);
-    @include flex($direction: column, $gap: space(2));
+    text-align: center;
+    @include flex($direction: column, $gap: space(3));
 
-    span {
-      align-self: flex-end;
-      cursor: pointer;
+    .check-icon {
+      color: $buttonBlueDefault;
+      font-size: 40px;
+      @include flex($align: center, $justify: center);
+      border-radius: 50%;
+      border: 1px solid $buttonBlueDefault;
+      width: 70px;
+      height: 70px;
+      align-self: center;
     }
 
     h2 {
       font-weight: 600;
+    }
+
+    .link-tree-modal-desc {
+      line-height: 25px;
     }
   }
 }

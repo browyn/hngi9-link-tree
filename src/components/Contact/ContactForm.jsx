@@ -59,9 +59,7 @@ const ContactForm = () => {
     e.preventDefault();
     // Displays errors if input field is empty
 
-    const formIsEmpty = Object.values(formData).some((value) => value === "");
-
-    if (formIsEmpty) {
+    if (Object.values(formData).some((value) => value === "")) {
       const submitErrors = Object.fromEntries(
         Object.entries(formData).filter(([key, value]) => value === "")
       );
@@ -71,12 +69,7 @@ const ContactForm = () => {
       setErrors(submitErrors);
     }
 
-    // clears form if errors object is empty
-    const errorsIsEmpty =
-      Object.values(errors).every((value) => value === null) &&
-      JSON.stringify(errors) !== "{}";
-
-    if (errorsIsEmpty) {
+    if (!Object.values(formData).some((value) => value === "")) {
       setFormData({
         first_name: "",
         last_name: "",
@@ -162,6 +155,7 @@ const ContactForm = () => {
                   type="checkbox"
                   id="checkbox"
                   className="link-tree-inputCheckbox"
+                  required
                 />
                 <span>
                   You agree to providing your data to Browyn Louis who may
@@ -174,7 +168,9 @@ const ContactForm = () => {
           </form>
         </div>
       </div>
-      {modal && <Modal title="Message Sent" setModal={setModal} />}
+      {modal && (
+        <Modal desc="Thank you for reahing out, your message has been sent successfully, I will get back to you via the email provided within the next 24 hours." />
+      )}
     </>
   );
 };

@@ -1,18 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const Modal = (info) => {
   return (
     <>
       <div className="link-tree-modal-container">
         <div className="link-tree-modal">
-          <span
-            className="material-symbols-outlined"
-            onClick={() => info.setModal(false)}
-          >
-            close
-          </span>
-          {info.title && <h2>{info.title}</h2>}
-          {info.desc && <span>{info.desc}</span>}
+          <span className="material-symbols-outlined check-icon">check</span>
+          {info.desc && (
+            <span className="link-tree-modal-desc">{info.desc}</span>
+          )}
+          <Link to="/">
+            <Button type="button" text="Back to Home" />
+          </Link>
         </div>
       </div>
     </>

@@ -8,12 +8,24 @@ const Modal = (info) => {
       <div className="link-tree-modal-container">
         <div className="link-tree-modal">
           <span className="material-symbols-outlined check-icon">check</span>
+          {info.title && (
+            <p>
+              <strong>{info.title}</strong>
+            </p>
+          )}
           {info.desc && (
             <span className="link-tree-modal-desc">{info.desc}</span>
           )}
-          <Link to="/">
-            <Button type="button" text="Back to Home" />
-          </Link>
+          {info.button && (
+            <Link to={info.btnLink ? info.btnLink : "#"}>
+              <Button
+                type={info.btnType ? info.btnType : "button"}
+                text={info.btnText}
+                clickHandler={info.clickHandler}
+                id={info.id}
+              />
+            </Link>
+          )}
         </div>
       </div>
     </>

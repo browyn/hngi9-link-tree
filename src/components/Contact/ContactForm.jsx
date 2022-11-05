@@ -5,15 +5,16 @@ import Button from "../Button";
 import Modal from "../Modal";
 
 const ContactForm = () => {
+  const [modal, setModal] = React.useState(false);
+  const [errors, setErrors] = React.useState({});
   const [formData, setFormData] = React.useState({
     first_name: "",
     last_name: "",
     email: "",
     message: "",
   });
-  const [errors, setErrors] = React.useState({});
-  const [modal, setModal] = React.useState(false);
 
+  // Validation function
   const handleValidation = (e, key, value) => {
     if (value.length === 0) {
       setErrors({
@@ -41,6 +42,7 @@ const ContactForm = () => {
     });
   };
 
+  // Handles validation on change
   const handleChange = (e) => {
     let key = e.target.id;
     let value = e.target.value;
@@ -49,6 +51,7 @@ const ContactForm = () => {
     setFormData({ ...formData, [key]: value });
   };
 
+  // Handles validation on blur
   const handleBlur = (e) => {
     let key = e.target.id;
     let value = e.target.value;
@@ -56,6 +59,7 @@ const ContactForm = () => {
     handleValidation(formData, key, value);
   };
 
+  // Checks for empty inputs, creates error if any and process submission if otherwise
   const handleSubmit = (e, formData) => {
     e.preventDefault();
 
@@ -153,14 +157,14 @@ const ContactForm = () => {
 
             {/* Checkbox */}
             <div className="link-tree-inputGroup checkbox">
+              <input
+                type="checkbox"
+                id="checkbox"
+                className="link-tree-inputCheckbox"
+                required
+              />
               <label htmlFor="checkbox">
-                <input
-                  type="checkbox"
-                  id="checkbox"
-                  className="link-tree-inputCheckbox"
-                  required
-                />
-                <span>
+                <span className="text">
                   You agree to providing your data to Browyn Louis who may
                   contact you.
                 </span>
@@ -177,7 +181,13 @@ const ContactForm = () => {
         </div>
       </div>
       {modal && (
-        <Modal desc="Thank you for reaching out, your message has been sent successfully, I will get back to you via the email provided within the next 24 hours." />
+        <Modal
+          title="Thank You!"
+          desc="Your message has been sent successfully, I will get back to you via the email shortly."
+          button={true}
+          btnLink="/"
+          btnText="Back to homepage"
+        />
       )}
     </>
   );

@@ -11,12 +11,50 @@
       }
 
       .link-tree-inputGroup.checkbox {
-        color: #344054;
+        input {
+          position: absolute;
+          z-index: -1;
+        }
+
+        input[type="checkbox"]:checked + label::after {
+          content: " ";
+        }
+
+        input[type="checkbox"]:focus + label::before,
+        input[type="checkbox"]:hover + label::before {
+          box-shadow: $butonShadow;
+        }
+
         label {
           font-size: 14px;
           @include flex($gap: space(1), $align: center);
           @media screen and (max-width: 575px) {
             align-items: flex-start;
+          }
+
+          &::before {
+            background: rgb(249, 250, 251);
+            border: 1px solid $buttonBlueDefault;
+            content: "";
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            border-radius: space(0.6);
+            cursor: pointer;
+          }
+
+          &::after {
+            content: none;
+            display: inline-block;
+            height: 4px;
+            width: 7px;
+            border-left: 2px solid rgb(21, 112, 239);
+            border-bottom: 2px solid rgb(21, 112, 239);
+            top: space(0.5);
+            left: space(0.5);
+            transform: rotate(-45deg);
+            position: absolute;
+            z-index: 1;
           }
         }
       }

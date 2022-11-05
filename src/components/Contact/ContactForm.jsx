@@ -69,7 +69,10 @@ const ContactForm = () => {
       setErrors(submitErrors);
     }
 
-    if (!Object.values(formData).some((value) => value === "")) {
+    if (
+      !Object.values(formData).some((value) => value === "") &&
+      Object.values(errors).every((value) => value === null)
+    ) {
       setFormData({
         first_name: "",
         last_name: "",

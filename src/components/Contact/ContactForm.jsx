@@ -1,76 +1,94 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import InputField from "../InputField";
 import Button from "../Button";
 import Modal from "../Modal";
 
 const ContactForm = () => {
-  const [submit, setSubmit] = useState();
-  const [modal, setModal] = useState();
-  const [errors, setErrors] = useState([]);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = React.useState({
     first_name: "",
     last_name: "",
-    message: "",
     email: "",
+    message: "",
   });
-  const [touched, setTouched] = useState({});
+  const [errors, setErrors] = React.useState({});
+  const [modal, setModal] = React.useState(false);
 
-  const validation = (values) => {
-    const errors = {};
-
-    if (!values.first_name) {
-      errors.first_name = "Please the first name field is Required";
+  const handleValidation = (e, key, value) => {
+    if (value.length === 0) {
+      setErrors({
+        ...errors,
+        [key]: `The ${key.split("_").join(" ")} field is required`,
+      });
+    } else if (key === "email") {
+      if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value))
+        errors[key] = "Please enter a valid email address";
+      else errors[key] = null;
+    } else if (key === "message") {
+      if (value.length < 30)
+        errors[key] = "Message should be more than 30 characters";
+      else errors[key] = null;
+    } else {
+      setErrors({
+        ...errors,
+        [key]: null,
+      });
     }
 
-    if (!values.last_name) {
-      errors.last_name = "Please the last name field is required";
-    }
-
-    if (!values.email) {
-      errors.email = "Your email is required";
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
-      errors.email = "Please enter a valid email address";
-    }
-
-    if (!values.message) {
-      errors.message = "Please enter a message";
-    } else if (values.message.length < 30) {
-      errors.message = "Please enter at least 30 characters";
-    }
-    setErrors(errors);
+    setFormData({
+      ...formData,
+      [key]: value,
+    });
   };
 
-  useEffect(() => {
-    validation(formData);
-  }, [formData, touched]);
+  const handleChange = (e) => {
+    let key = e.target.id;
+    let value = e.target.value;
 
-  const handleSubmit = (e, values) => {
+    handleValidation(formData, key, value);
+    setFormData({ ...formData, [key]: value });
+  };
+
+  const handleBlur = (e) => {
+    let key = e.target.id;
+    let value = e.target.value;
+    handleValidation(formData, key, value);
+  };
+
+  const handleSubmit = (e, formData) => {
     e.preventDefault();
-    setSubmit(true);
-    validation(values);
-    if (JSON.stringify(errors) === "{}") {
+    // Displays errors if input field is empty
+
+    const formIsEmpty = Object.values(formData).some((value) => value === "");
+
+    if (formIsEmpty) {
+      const submitErrors = Object.fromEntries(
+        Object.entries(formData).filter(([key, value]) => value === "")
+      );
+      for (let key in submitErrors) {
+        submitErrors[key] = `The ${key.split("_").join(" ")} field is required`;
+      }
+      setErrors(submitErrors);
+    }
+
+    // clears form if errors object is empty
+    const errorsIsEmpty =
+      Object.values(errors).every((value) => value === null) &&
+      JSON.stringify(errors) !== "{}";
+
+    if (errorsIsEmpty) {
+      setFormData({
+        first_name: "",
+        last_name: "",
+        email: "",
+        message: "",
+      });
+
       setModal(true);
     }
   };
 
-  const handleChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.id]: e.target.value,
-    }));
-  };
-
-  const handleBlur = (e) => {
-    setTouched((prevState) => ({
-      ...prevState,
-      [e.target.id]: true,
-    }));
-  };
-
-  const { first_name, last_name, email } = formData;
+  const { first_name, last_name, email, message } = formData;
 
   return (
     <>
@@ -89,16 +107,8 @@ const ContactForm = () => {
                 placeholder="Enter your first name"
                 handleChange={handleChange}
                 handleBlur={handleBlur}
-                className={
-                  (errors.first_name && touched.first_name && "error") ||
-                  (submit && errors.first_name && "error")
-                }
-                helperText={
-                  (errors.first_name &&
-                    touched.first_name &&
-                    errors.first_name) ||
-                  (submit && errors.first_name)
-                }
+                helperText={errors.first_name && errors.first_name}
+                className={errors.first_name && "error"}
                 value={first_name}
               />
               <InputField
@@ -108,14 +118,8 @@ const ContactForm = () => {
                 placeholder="Enter your last name"
                 handleChange={handleChange}
                 handleBlur={handleBlur}
-                className={
-                  (errors.last_name && touched.last_name && "error") ||
-                  (submit && errors.last_name && "error")
-                }
-                helperText={
-                  (errors.last_name && touched.last_name && errors.last_name) ||
-                  (submit && errors.last_name)
-                }
+                helperText={errors.last_name && errors.last_name}
+                className={errors.last_name && "error"}
                 value={last_name}
               />
             </div>
@@ -128,14 +132,8 @@ const ContactForm = () => {
               placeholder="yourname@gmail.com"
               handleChange={handleChange}
               handleBlur={handleBlur}
-              className={
-                (errors.email && touched.email && "error") ||
-                (submit && errors.email && "error")
-              }
-              helperText={
-                (errors.email && touched.email && errors.email) ||
-                (submit && errors.email)
-              }
+              helperText={errors.email && errors.email}
+              className={errors.email && "error"}
               value={email}
             />
 
@@ -147,21 +145,14 @@ const ContactForm = () => {
                 placeholder="Send me a message and I'll reply you as soon as possible..."
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={
-                  (errors.message && touched.message && "error") ||
-                  (submit && errors.message && "error")
-                }
+                className={errors.message && "error"}
+                value={message}
               ></textarea>
-              {(errors.message && touched.message && (
+              {errors.message && (
                 <span className="link-tree-input-helperText">
                   {errors.message}
                 </span>
-              )) ||
-                (submit && errors.message && (
-                  <span className="link-tree-input-helperText">
-                    {errors.message}
-                  </span>
-                ))}
+              )}
             </div>
 
             {/* Checkbox */}
@@ -183,14 +174,7 @@ const ContactForm = () => {
           </form>
         </div>
       </div>
-      {modal && (
-        <Modal
-          title="Form Submitted"
-          desc="Your message was submitted successfully, a response will be sent to your email within 24 hours"
-          modal={modal}
-          setModal={setModal}
-        />
-      )}
+      {modal && <Modal title="Message Sent" setModal={setModal} />}
     </>
   );
 };

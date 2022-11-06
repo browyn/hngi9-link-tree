@@ -54,7 +54,7 @@ const ContactForm = () => {
   // Handles validation on blur
   const handleBlur = (e) => {
     let key = e.target.id;
-    let value = e.target.value;
+    let value = e.target.value.trim();
 
     handleValidation(formData, key, value);
   };

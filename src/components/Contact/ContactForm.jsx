@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 import InputField from "../InputField";
 import Button from "../Button";
 import Modal from "../Modal";
 
 const ContactForm = () => {
-  const [modal, setModal] = React.useState(false);
-  const [errors, setErrors] = React.useState({});
-  const [formData, setFormData] = React.useState({
+  const [modal, setModal] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
     email: "",
@@ -48,10 +48,10 @@ const ContactForm = () => {
     let value = e.target.value;
 
     handleValidation(formData, key, value);
-    setFormData({ ...formData, [key]: value });
   };
 
   // Handles validation on blur
+  // Trims value on blur
   const handleBlur = (e) => {
     let key = e.target.id;
     let value = e.target.value.trim();
@@ -74,7 +74,7 @@ const ContactForm = () => {
     }
 
     if (
-      !Object.values(formData).some((value) => value === "") &&
+      Object.values(formData).some((value) => value !== "") &&
       Object.values(errors).every((value) => value === null)
     ) {
       setFormData({

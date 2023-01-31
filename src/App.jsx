@@ -21,25 +21,3 @@ const App = () => {
 
 export default App;
 
-
-
-
-
-
-import { useLocation } from "react-router-dom";
-
-const Header = () => {
-  const location = useLocation();
-
-  if(location.pathname === "/account") {
-    return null
-  } 
-
-  return (
-    <>
-      <HeaderElement>
-        {/* Header content */}
-      </HeaderElement>
-    </>
-  )
-}
